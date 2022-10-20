@@ -1,0 +1,9 @@
+name: squid
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - matplotlib
+  - flask
+  - pip
+  - plotly
