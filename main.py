@@ -6,7 +6,7 @@ from viz import viz
 
 # Load data
 # TODO prompt user to designate path
-path = "./samples/example.csv"
+path = "sample_data/example.csv"
 df = url.path_to_dataframe(path)
 
 # Display summary of data
