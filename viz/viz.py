@@ -1,21 +1,29 @@
-# visualization file
+# visualization functions
 
 from matplotlib import pyplot as plt
-plt.interactive(False)
+plt.interactive(False) # @penguinyaro needed this to make my plots show in his pycharm
+# TODO probably remove above later
 
-# get dataframe
-# TODO change this to an import from data.url
-import pandas as pd
-url = "https://opendata.hawaii.gov/dataset/c2b3cc44-13db-4d91-bca0-e46d629e0141/resource/8241acde-528f-4895-84c9-aa21dc3bdc94/download/department-of-defense-state-civil-defense-emergency-siren-locations-csv.csv"
-df = pd.read_csv(url)
+def histogram(data,xlabel,ylabel,title):
+    """
+    Display a histogram of the data
 
-# visualize
+    :param data: e.g. a single column of dataframe (does it have to be numerical? maybe works for multiple columns)
+    :param xlabel: label for x-axis
+    :param ylabel:
+    :param title:
+    :return: display the plot
+    """
+    # TODO add feature selection
 
-# TODO write functions for different visualizations and call them here
+    # generate histogram
+    plt.hist(data)
+    if xlabel is not None:
+        plt.xlabel(xlabel)
+    if ylabel is not None:
+        plt.ylabel(ylabel)
+    if title is not None:
+        plt.title(title)
 
-# A histogram
-plt.hist(df['DECIBEL'])
-plt.xlabel('decibel')
-plt.ylabel('counts')
-plt.title('Sirens')
-plt.show()
+    #TODO determine how to actually display something
+    plt.show()
