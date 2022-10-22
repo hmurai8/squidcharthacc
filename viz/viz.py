@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 plt.interactive(False) # @penguinyaro needed this to make my plots show in his pycharm
 # TODO probably remove above later
 
-def histogram(data,xlabel,ylabel,title):
+def histogram(data,xlabel=None,ylabel="counts",title=None):
     """
     Display a histogram of the data
 
