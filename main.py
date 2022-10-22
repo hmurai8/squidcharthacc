@@ -14,6 +14,7 @@ df = url.path_to_dataframe(path)
 # e.g. data.summarize(df)
 print(df.columns)
 print(df.dtypes)
+print(df)
 
 # Prompt user for input based on above
 # TODO implement this
