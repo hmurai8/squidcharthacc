@@ -1,5 +1,5 @@
-from squid.data import url
-from squid.viz import viz
+from brains.data import url
+from brains.viz import viz
 
 
 # TODO actually make a main funciton and/or wrap this into flask implementation
