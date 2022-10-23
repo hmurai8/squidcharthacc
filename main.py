@@ -25,13 +25,14 @@ def data_summarize():
     print("Current columns + Types of data:")
     print(df.dtypes)
     # Number of unique values for each column reveals which columns have most and least unique values
-    # This tells user to pick column w least unique values when customizing
+    # This tells user to pick column with the least unique values when customizing
     print("Number of unique values:")
     print(df.nunique())
     # Tell user which displays are available to use
     print("Types of displays possible:")
     print("Bar chart, histogram, pie chart")  # I think these?
-    # User guide throughout to ensure most helpful data visualizations
+    # User guide to help user customize most helpful data visualizations after seeing data summary (what you should
+    # be looking for in certain fields and what type of chart fits best for certain types of data)
 
 data_summarize()
 
