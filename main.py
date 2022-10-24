@@ -1,5 +1,5 @@
-from brains.data import url
-from brains.viz import viz
+import brains.data.url as url
+import brains.viz.viz as viz
 
 
 
