@@ -18,17 +18,17 @@ df = url.path_to_dataframe(path)
 # e.g. data.summarize(df)
 
 def data_summarize():
-    # Make user aware of basic features
-    print("Data features:")
-    print(df.info())
     # Just to make user aware of current dataset columns
     print("Current columns + Types of data:")
     print(df.dtypes)
+    # Make user aware of basic numeric data features
+    print("Numeric data features:")
+    print(df.agg(['count', 'min', 'max', 'mean', 'sum']))
     # Number of unique values for each column reveals which columns have most and least unique values
     # This tells user to pick column with the least unique values when customizing
     print("Number of unique values:")
     print(df.nunique())
-    # Tell user which displays are available to use
+    # Tell user which displays are available to use (should choose one with least amt of unique values)
     print("Types of displays possible:")
     print("Bar chart, histogram, pie chart")  # I think these?
     # User guide to help user customize most helpful data visualizations after seeing data summary (what you should
