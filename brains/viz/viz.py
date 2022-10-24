@@ -1,8 +1,10 @@
 # visualization functions
 
+# BUG 15 fix: This might just be a pycharm problem
+import matplotlib
+matplotlib.use('TkAgg') # probably a better way to set this, but this works for now
+
 from matplotlib import pyplot as plt
-plt.interactive(False) # @penguinyaro needed this to make my plots show in his pycharm
-# TODO probably remove above later
 
 def histogram(data,xlabel=None,ylabel="counts",title=None):
     """
@@ -25,5 +27,5 @@ def histogram(data,xlabel=None,ylabel="counts",title=None):
     if title is not None:
         plt.title(title)
 
-    #TODO determine how to actually display something
+    #TODO determine how to actually display something -- maybe we return the plt instead
     plt.show()
