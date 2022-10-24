@@ -28,6 +28,12 @@ def data_summarize():
     # This tells user to pick column with the least unique values when customizing
     print("Number of unique values:")
     print(df.nunique())
+    unique_values = df.nunique()
+    for value in unique_values:
+        if value <= 10:
+            print("Suggested field (10 or less fields)")
+        else:
+            print("Not suggested")
     # Tell user which displays are available to use (should choose one with least amt of unique values)
     print("Types of displays possible:")
     print("Bar chart, histogram, pie chart")  # I think these?
