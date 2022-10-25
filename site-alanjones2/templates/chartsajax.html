@@ -15,10 +15,16 @@
 </head>
 
 <body style="font-family:arial, sans-serif">
-    <h1>GDP per Capita Over Time</h1>
-    <h2>Choose your country</h2>
-    <p>Make sure you spell it correctly with capital letter(s), e.g. United Kingdom</p>
+    <h1>SquidBrainsAreShapedLikeDonuts</h1>
+    <h2>Select your dataset</h2>
+    <p>Copy and paste the url for the CSV</p>
     <input type="text" id="fname" name="fname" onchange="cb(this.value)">
+
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
     <div id="chart" class="chart"></div>
 </body>
 

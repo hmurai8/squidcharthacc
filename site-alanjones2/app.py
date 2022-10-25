@@ -23,6 +23,7 @@ parent = os.path.dirname(current)
 # the sys.path.
 sys.path.append(parent)
 
+# our libaries
 from brains.viz import plotly_viz as pp
 from brains.data import url as url
 
@@ -30,28 +31,24 @@ from brains.data import url as url
 app = Flask(__name__)
 
 
+# call back method, refreshes when data is entered
 @app.route('/callback', methods=['POST', 'GET'])
 def cb():
-    return gm(request.args.get('data'))
+    return plot(request.args.get('data')) # calls a function to update
 
 
 @app.route('/')
 def index():
-    return render_template('chartsajax.html', graphJSON=gm())
-
-
-def gm(country='United Kingdom'):
-    # df = pd.DataFrame(px.data.gapminder())
+    # return render_template('chartsajax.html', graphJSON=gm())
     path = "../sample_data/example.csv"
+    df = url.path_to_dataframe(path)
+    return render_template('chartsajax.html', graphJSON=plot(), tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+
+def plot(path="../sample_data/example.csv"): # TODO add plot type and feature selection trhough callbacks
+    # ploit the stuff
+
     df = url.path_to_dataframe(path)
 
     fig = pp.histogram(df['Age'])
-
-    # fig = px.line(df[df['country'] == country], x="year", y="gdpPercap")
-
-    # graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    # print(fig.data[0])
-    # fig.data[0]['staticPlot']=True
-
-    # return graphJSON
     return fig
