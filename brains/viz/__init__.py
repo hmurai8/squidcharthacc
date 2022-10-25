@@ -1,1 +1,2 @@
-from . import viz
+from . import matplotlib_viz
+from . import plotly_viz

@@ -6,8 +6,14 @@ import json
 import plotly
 import plotly.express as px
 
-# from brains.data import url
+print("__name__: " + __name__)
+
+# from ..brains.data.url as url
+#
+# import brains.data.url as url
 # from brains.viz import plotly_plots as pp
+
+
 
 app = Flask(__name__)
 
@@ -24,7 +30,7 @@ def index():
 
 def gm(country='United Kingdom'):
     df = pd.DataFrame(px.data.gapminder())
-    path = "sample_data/example.csv"
+    # path = "sample_data/example.csv"
     # df = url.path_to_dataframe(path)
 
     # fig = pp.histogram(df['Age'])

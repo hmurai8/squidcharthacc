@@ -1,6 +1,8 @@
-import brains.data.url as url
-import brains.viz.viz as viz
-
+# import brains.data.url as url
+from brains.data import url
+from brains.viz import matplotlib_viz
+# import brains.viz.viz as viz
+from brains.viz import plotly_viz as pp
 
 # TODO actually make a main funciton and/or wrap this into flask implementation
 
@@ -19,3 +21,7 @@ print(df.dtypes)
 # TODO implement this
 print("plotting a histogram of Age...")
 viz.histogram(df['Age'])
+
+# plotly output
+graphjson,fig = pp.histogram(df['Age'])
+fig.show()

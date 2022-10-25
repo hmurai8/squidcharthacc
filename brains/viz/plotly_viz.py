@@ -30,4 +30,4 @@ def histogram(data,xlabel=None,ylabel="counts",title=None):
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     print(fig.data[0])
 
-    return graphJSON
+    return graphJSON, fig
