@@ -23,7 +23,8 @@ def data_summarize():
     print(df.dtypes)
     # Make user aware of basic numeric data features
     print("Numeric data features:")
-    print(df.agg(['count', 'min', 'max', 'mean', 'sum']))
+    aggregation = df.agg(['count', 'min', 'max', 'mean', 'sum'])
+    print(aggregation)
     # Number of unique values for each column reveals which columns have most and least unique values
     # This tells user to pick column with the least unique values when customizing
     print("Number of unique values:")
@@ -36,7 +37,7 @@ def data_summarize():
             print("Not suggested")
     # Tell user which displays are available to use (should choose one with least amt of unique values)
     print("Types of displays possible:")
-    print("Bar chart, histogram, pie chart")  # I think these?
+    print("Bar chart, histogram, pie chart, line graph")  # I think these?
     # User guide to help user customize most helpful data visualizations after seeing data summary (what you should
     # be looking for in certain fields and what type of chart fits best for certain types of data)
 
