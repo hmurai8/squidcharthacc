@@ -19,27 +19,22 @@ df = url.path_to_dataframe(path)
 
 def data_summarize():
     # Just to make user aware of current dataset columns
-    print("Current columns + Types of data:")
-    print(df.dtypes)
-    # Make user aware of basic numeric data features
-    print("Numeric data features:")
+    # variables
+    current_columns = df.columns
+    types = df.dtypes
     aggregation = df.agg(['count', 'min', 'max', 'mean', 'sum'])
+    unique = df.nunique()
+    print("Current columns:")
+    print(current_columns)
+    print("Types of data:")
+    print(types)
+    print("Numeric data features:")
     print(aggregation)
-    # Number of unique values for each column reveals which columns have most and least unique values
-    # This tells user to pick column with the least unique values when customizing
     print("Number of unique values:")
-    print(df.nunique())
-    unique_values = df.nunique()
-    for value in unique_values:
-        if value <= 10:
-            print("Suggested field (10 or less fields)")
-        else:
-            print("Not suggested")
-    # Tell user which displays are available to use (should choose one with least amt of unique values)
+    print(unique)
+    print("* Suggested column fields: 10 unique values or less *")
     print("Types of displays possible:")
-    print("Bar chart, histogram, pie chart, line graph")  # I think these?
-    # User guide to help user customize most helpful data visualizations after seeing data summary (what you should
-    # be looking for in certain fields and what type of chart fits best for certain types of data)
+    print("Bar chart, Histogram, Pie chart, Line graph")
 
 data_summarize()
 
