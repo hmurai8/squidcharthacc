@@ -6,7 +6,7 @@ import plotly
 import plotly.express as px
 
 
-def histogram(data,xlabel=None,ylabel="counts",title=None):
+def histogram(data,xlabel=None,ylabel="counts",title=None, mode="JSON"):
     """
     Display a histogram of the data
 
@@ -14,6 +14,7 @@ def histogram(data,xlabel=None,ylabel="counts",title=None):
     :param xlabel: label for x-axis
     :param ylabel:
     :param title:
+    :param mode: {JSON or FIG}; return a json dump or return the figure
     :return: display the plot
     """
     # TODO add feature selection
@@ -27,7 +28,11 @@ def histogram(data,xlabel=None,ylabel="counts",title=None):
     # if title is not None:
     #     plt.title(title)
 
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     print(fig.data[0])
 
-    return graphJSON, fig
+    if mode == "JSON":
+        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        return graphJSON
+    else:
+        return fig
+

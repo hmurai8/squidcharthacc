@@ -20,8 +20,8 @@ print(df.dtypes)
 # Prompt user for input based on above
 # TODO implement this
 print("plotting a histogram of Age...")
-viz.histogram(df['Age'])
+matplotlib_viz.histogram(df['Age'])
 
 # plotly output
-graphjson,fig = pp.histogram(df['Age'])
+fig = pp.histogram(df['Age'],mode="FIG")
 fig.show()
