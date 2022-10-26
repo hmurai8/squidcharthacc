@@ -18,18 +18,23 @@ df = url.path_to_dataframe(path)
 # e.g. data.summarize(df)
 
 def data_summarize():
-    # Just to make user aware of current dataset columns
     # variables
-    current_columns = df.columns
+    import pandas as pd
+    pd.set_option('display.float_format', lambda x: '%.1f' % x)
+    current_columns = df.columns #list
     types = df.dtypes
-    aggregation = df.agg(['count', 'min', 'max', 'mean', 'sum'])
     unique = df.nunique()
+    description = df.describe()
+    total = df.sum(numeric_only = True)
+
     print("Current columns:")
-    print(current_columns)
+    print(', '.join(current_columns))
     print("Types of data:")
     print(types)
     print("Numeric data features:")
-    print(aggregation)
+    print(description)
+    print("Sum of numeric data:")
+    print(total)
     print("Number of unique values:")
     print(unique)
     print("* Suggested column fields: 10 unique values or less *")
@@ -43,3 +48,9 @@ data_summarize()
 # TODO implement this
 print("plotting a histogram of Age...")
 viz.histogram(df['Age'])
+
+import plotly.express as px
+def bar_chart(data,xlabel=None,ylabel="counts",title=None):
+    fig = px.bar(data)
+    fig.show()
+bar_chart(df['Age'])
