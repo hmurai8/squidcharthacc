@@ -31,6 +31,20 @@ from brains.data import url as url
 app = Flask(__name__)
 
 
+class ActiveViz: # object to hold parameters for actuve visualization
+    def __init__(self, path, df, features):
+        self.path = None
+        self.df = pd.DataFrame()
+        self.features = self.feats()
+
+        class feats:
+            def __init__(self, avail, selected):
+                self.avail = None
+                self.selected = None
+
+
+
+
 # call back method, refreshes when data is entered
 @app.route('/callback', methods=['POST', 'GET'])
 def cb():
