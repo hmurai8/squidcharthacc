@@ -35,6 +35,7 @@ def data_summarize():
     print(description)
     print("Sum of numeric data:")
     print(total)
+    print("No numeric data for sum")
     print("Number of unique values:")
     print(unique)
     print("* Suggested column fields: 10 unique values or less *")
@@ -50,7 +51,7 @@ print("plotting a histogram of Age...")
 viz.histogram(df['Age'])
 
 import plotly.express as px
-def bar_chart(data,xlabel=None,ylabel="counts",title=None):
+def bar_chart(data,x=None,y="counts",title=None):
     fig = px.bar(data)
     fig.show()
-bar_chart(df['Age'])
+bar_chart(df, x = "Age", y = "Gender", title = "Bar Chart")
