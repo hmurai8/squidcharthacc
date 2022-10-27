@@ -17,7 +17,7 @@ df = url.path_to_dataframe(path)
 #TODO make module/function for this
 # e.g. data.summarize(df)
 
-def data_summarize():
+def data_summarize(df):
     # variables
     import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.1f' % x)
@@ -31,27 +31,28 @@ def data_summarize():
     print(', '.join(current_columns))
     print("Types of data:")
     print(types)
-    print("Numeric data features:")
+    print("Numeric data aggregation:")
     print(description)
     print("Sum of numeric data:")
     print(total)
-    print("No numeric data for sum")
     print("Number of unique values:")
-    print(unique)
     print("* Suggested column fields: 10 unique values or less *")
+    print(unique)
     print("Types of displays possible:")
     print("Bar chart, Histogram, Pie chart, Line graph")
 
-data_summarize()
-
+data_summarize(df)
 
 # Prompt user for input based on above
 # TODO implement this
 print("plotting a histogram of Age...")
 viz.histogram(df['Age'])
 
+#just trying out things
 import plotly.express as px
-def bar_chart(data,x=None,y="counts",title=None):
-    fig = px.bar(data)
+def bar_chart(data, x=None, y=None, title=None):
+    fig = px.bar(df, x = "Age", y = "Gender", title = "Bar Chart")
     fig.show()
+
 bar_chart(df, x = "Age", y = "Gender", title = "Bar Chart")
+
