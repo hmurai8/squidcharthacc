@@ -22,7 +22,7 @@ df = url.path_to_dataframe(path)
 def data_summarize(df):
     import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
-    current_columns = df.columns #list USE THIS
+    current_columns = df.columns #list
     types = df.dtypes
     unique = df.nunique()
     value_index = 0
@@ -39,35 +39,39 @@ def data_summarize(df):
     print("Sum of numeric data:")
     print(len(total))
     print(total)
-    print("* Suggested column fields: 10 unique values or less *")
+    print("Unique Values for Columns")
     for value in unique:
-        column_name = current_columns[value_index] # Could use columns here or make list unique
-        print("Number of unique values in " + str(column_name) + " ==> " + str(value))
+        column_name = current_columns[value_index]
+        print(str(value) + " unique values in " + str(column_name))
         value_index += 1
-
-    print(unique)
+    print("* Suggested column fields: 10 unique values or less *")
     print("Types of displays possible:")
     print("Bar chart, Histogram, Pie chart, Line graph")
 
 data_summarize(df)
 
 # User should actually should choose fields; those get put in as parameters
-def pivot_table(df):
+def pivot_table(df, values, index, columns, margins, aggfunc):
     piv_tab = pd.pivot_table(
-        df,
-        values=["Age"],
-        index=["Name", "Zip Code"],
-        columns=["Gender"],
-        aggfunc="sum"
+        df, values=values,
+        index=index,
+        columns=columns,
+        margins=margins,
+        aggfunc=aggfunc
     )
     return piv_tab
 
 print("--- Pivot Table ---")
-print(pivot_table(df))
+print(pivot_table(df,
+        values=["Age"],
+        index=["Name", "Zip Code"],
+        columns=["Gender"],
+        margins = True,
+        aggfunc="sum"))
 
 #just trying out things
 import plotly.express as px
-def bar_chart(data, x=None, y=None, title=None):
+def bar_chart(data, x, y, title):
     fig = px.bar(df, x = "Age", y = "Gender", title = "Bar Chart")
     fig.show()
 #not sure how to make parameters work
