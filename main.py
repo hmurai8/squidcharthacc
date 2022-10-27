@@ -36,10 +36,9 @@ def data_summarize(df):
     print("Object Count")
     print("Numeric data aggregation:")
     print(agg)
-    print("Sum of numeric data:")
-    print(len(total))
+    print("Sum of numeric data: " + str((len(total))) + " columns")
     print(total)
-    print("Unique Values for Columns")
+    print("Number of unique values for all columns:")
     for value in unique:
         column_name = current_columns[value_index]
         print(str(value) + " unique values in " + str(column_name))
@@ -50,13 +49,13 @@ def data_summarize(df):
 
 data_summarize(df)
 
+# ADD user input
 # User should actually should choose fields; those get put in as parameters
-def pivot_table(df, values, index, columns, margins, aggfunc):
+def pivot_table(df, values, index, columns, aggfunc):
     piv_tab = pd.pivot_table(
         df, values=values,
         index=index,
         columns=columns,
-        margins=margins,
         aggfunc=aggfunc
     )
     return piv_tab
@@ -64,15 +63,14 @@ def pivot_table(df, values, index, columns, margins, aggfunc):
 print("--- Pivot Table ---")
 print(pivot_table(df,
         values=["Age"],
-        index=["Name", "Zip Code"],
+        index=["Name"],
         columns=["Gender"],
-        margins = True,
         aggfunc="sum"))
 
 #just trying out things
 import plotly.express as px
-def bar_chart(data, x, y, title):
-    fig = px.bar(df, x = "Age", y = "Gender", title = "Bar Chart")
+def bar_chart(df, x, y, title):
+    fig = px.bar(df,x=x,y=y,title=title)
     fig.show()
 #not sure how to make parameters work
 bar_chart(df, x = "Age", y = "Gender", title = "Bar Chart")
