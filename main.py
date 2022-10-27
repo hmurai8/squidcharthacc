@@ -18,14 +18,14 @@ df = url.path_to_dataframe(path)
 # e.g. data.summarize(df)
 
 def data_summarize(df):
-    # variables
     import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.1f' % x)
-    current_columns = df.columns #list
+    current_columns = df.columns #list USE THIS
     types = df.dtypes
     unique = df.nunique()
     description = df.describe()
     total = df.sum(numeric_only = True)
+    value_index = 0
 
     print("Current columns:")
     print(', '.join(current_columns))
@@ -34,9 +34,21 @@ def data_summarize(df):
     print("Numeric data aggregation:")
     print(description)
     print("Sum of numeric data:")
-    print(total)
-    print("Number of unique values:")
+    max_index_tot = len(total) - 1
+    for value in total:
+        column_name = current_columns[value_index] # NOT columns use total (need to make list)
+        print("Sum of " + column_name + " values ==> " + str(value))
+        while value_index < max_index_tot:
+            value_index += 1
+
     print("* Suggested column fields: 10 unique values or less *")
+    max_index_uni = len(unique) - 1
+    for value in unique:
+        column_name = current_columns[value_index] # Could use columns here or make list unique
+        print("Number of unique values in " + str(column_name) + " column ==> " + str(value))
+        while value_index < max_index_uni:
+            value_index += 1
+
     print(unique)
     print("Types of displays possible:")
     print("Bar chart, Histogram, Pie chart, Line graph")
