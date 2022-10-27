@@ -25,9 +25,9 @@ def data_summarize(df):
     current_columns = df.columns #list
     types = df.dtypes
     unique = df.nunique()
-    value_index = 0
     total = df.sum(numeric_only=True)
     agg = df.describe().loc[['count','max', 'min', 'mean']]
+    value_index = 0
 
     print("Current columns:")
     print(', '.join(current_columns))
