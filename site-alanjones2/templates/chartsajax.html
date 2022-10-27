@@ -25,13 +25,20 @@
             {{ table|safe }}
     {% endfor %}
 
+    <form method="post" action="/select">
+      <select id="operator" name="operator">
+          <option value="=">=</option>
+          <option value=">">></option>
+          <option value="<"><</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+
     <div id="chart" class="chart"></div>
 </body>
 
 <script>
     d = {{ graphJSON | safe }};
-    //d.config={staticPlot: true};
     Plotly.newPlot('chart', d, {});
-
 </script>
 </html>
