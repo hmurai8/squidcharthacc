@@ -12,17 +12,10 @@ import plotly.express as px
 #path = "sample_data/example.csv"
 #df = url.path_to_dataframe(path)
 
-# User prompted to enter dataset
-# User enters dataset url
-path = input("Please enter the csv url for data visualization: \n")
-df = url.path_to_dataframe(path)
-
 # Display summary of data
 # Also tutorial for user as he goes along (suggesting what values to choose in pivot table
 # based off of what is given in data summary)
 # e.g. suggesting to use values that aren't unique, columns will be ideally 10 or less fields
-#TODO make module/function for this
-# e.g. data.summarize(df)
 
 # Function to summarize dataset
 def data_summarize(df):
@@ -44,15 +37,31 @@ def data_summarize(df):
     print("Types of displays possible:")
     print("Bar Chart, Histogram, Pie Chart, Line Graph")
 
+# User prompted to enter dataset
+# User enters dataset url
+# Loops til user enter correct csv url
+while True:
+    try:
+        path = input("Please enter the csv url for data visualization: \n")
+        df = url.path_to_dataframe(path)
+        break
+
+#TODO make module/function for this
+# e.g. data.summarize(df)
+
+    except FileNotFoundError as fnfe:
+        print("That is not a correct csv url, please try again.")
+
 # User views data summary
 data_summarize(df)
 
 # User chooses fields for pivot table
 # NOTE: not sure how x, y, color values should correspond to pivot table fields
-try:
+
     # NOTE: Annual Sales has a space after (need to correct, but for now type extra space at end)
-    print("From the current columns listed above, choose your fields for your pivot table.")
-    print("Please enter it exactly how it is shown under Columns.")
+print("From the current columns listed above, choose your fields for your pivot table.")
+print("Please enter it exactly how it is shown under Columns.")
+try:
     user_values = input("Please enter values for your pivot table (y values) : ") # Enter Annual Sales with space at end
     user_index = input("Please enter the index for your pivot table (color) : ") # Enter Contact Gender
     user_columns = input("Please enter columns for your pivot table (x values) : ") #Enter Private-Govt
@@ -75,6 +84,7 @@ try:
             aggfunc="sum"))
 
     # Prompt user to enter type of data visualization
+    data_vis_options = ["Bar Chart", "Histogram", "Pie Chart", "Line Graph"]
     user_graph = input("Please enter the type of graph you would like to generate: \n")
     # This doesn't connect to chosen data vis, just say it is Bar Chart in this case
     # Work on this some more
@@ -90,6 +100,7 @@ try:
 except KeyError as ke:
     print('Key Not Found in Columns under Data Summary:', ke)
 # Customize title option??
+# Just ends if error, find way to retrace back to input where error occured
 
 # Prompt user for input based on above
 # TODO implement this
