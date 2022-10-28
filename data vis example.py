@@ -9,6 +9,6 @@ fig = px.bar\
         x= 'Private-Govt',
         y = 'Annual Sales',
         color = 'Contact Gender',
-        title = 'Age by Zip Code'
+        title = 'Annual Sales by Sector and Gender'
         )
 fig.show()
