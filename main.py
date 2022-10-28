@@ -29,8 +29,6 @@ def data_summarize(df):
     import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
     print("-- Data summary --\n")
-    print("General Dataset Information")
-    print(df.info())
     print("Columns:")
     print(', '.join(df.columns))
     print("Types of data:")
@@ -55,9 +53,9 @@ try:
     # NOTE: Annual Sales has a space after (need to correct, but for now type extra space at end)
     print("From the current columns listed above, choose your fields for your pivot table.")
     print("Please enter it exactly how it is shown under Columns.")
-    user_values = input("Please enter values for your pivot table (y values) : ")
-    user_index = input("Please enter the index for your pivot table (color) : ")
-    user_columns = input("Please enter columns for your pivot table (x values) : ")
+    user_values = input("Please enter values for your pivot table (y values) : ") # Enter Annual Sales with space at end
+    user_index = input("Please enter the index for your pivot table (color) : ") # Enter Contact Gender
+    user_columns = input("Please enter columns for your pivot table (x values) : ") #Enter Private-Govt
 
     # Pivot table generated based off of user input (if user inputted correctly)
     def pivot_table(df, values, index, columns, aggfunc):
@@ -78,6 +76,8 @@ try:
 
     # Prompt user to enter type of data visualization
     user_graph = input("Please enter the type of graph you would like to generate: \n")
+    # This doesn't connect to chosen data vis, just say it is Bar Chart in this case
+    # Work on this some more
 
     # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
     # Just one of the visualization options -- Bar Chart
