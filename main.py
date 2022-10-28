@@ -1,8 +1,8 @@
 import pandas as pd
 
 import brains.data.url as url
-import brains.viz.viz as viz
-
+# import brains.viz.viz as viz
+import plotly.express as px
 
 
 # TODO actually make a main function and/or wrap this into flask implementation
@@ -28,6 +28,7 @@ df = url.path_to_dataframe(path)
 def data_summarize(df):
     import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
+    print("-- Data summary --\n")
     print("General Dataset Information")
     print(df.info())
     print("Columns:")
@@ -50,47 +51,50 @@ data_summarize(df)
 
 # User chooses fields for pivot table
 # NOTE: not sure how x, y, color values should correspond to pivot table fields
-print("From the current columns listed above, choose your fields for your pivot table.")
-print("Please enter it exactly how it is shown under Columns.")
-user_values = input("Please enter values for your pivot table (y values) : ")
-user_index = input("Please enter the index for your pivot table (color) : ")
-user_columns = input("Please enter columns for your pivot table (x values) : ")
+try:
+    # NOTE: Annual Sales has a space after (need to correct, but for now type extra space at end)
+    print("From the current columns listed above, choose your fields for your pivot table.")
+    print("Please enter it exactly how it is shown under Columns.")
+    user_values = input("Please enter values for your pivot table (y values) : ")
+    user_index = input("Please enter the index for your pivot table (color) : ")
+    user_columns = input("Please enter columns for your pivot table (x values) : ")
 
-# Pivot table generated based off of user input (if user inputted correctly)
-def pivot_table(df, values, index, columns, aggfunc):
-    piv_tab = pd.pivot_table(
-        df, values=values,
-        index=index,
-        columns=columns,
-        aggfunc=aggfunc
-    )
-    return piv_tab
+    # Pivot table generated based off of user input (if user inputted correctly)
+    def pivot_table(df, values, index, columns, aggfunc):
+        piv_tab = pd.pivot_table(
+            df, values=values,
+            index=index,
+            columns=columns,
+            aggfunc=aggfunc
+        )
+        return piv_tab
 
-print("--- Pivot Table ---")
-print(pivot_table(df,
-        values=[user_values],
-        index=[user_index],
-        columns=[user_columns],
-        aggfunc="sum"))
+    print("--- Pivot Table ---")
+    print(pivot_table(df,
+            values=[user_values],
+            index=[user_index],
+            columns=[user_columns],
+            aggfunc="sum"))
 
-# Prompt user to enter type of data visualization
-user_graph = input("Please enter the type of graph you would like to generate: \n")
+    # Prompt user to enter type of data visualization
+    user_graph = input("Please enter the type of graph you would like to generate: \n")
 
-# User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
+    # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
+    # Just one of the visualization options -- Bar Chart
 
-# Just one of the visualization options -- Bar Chart
-import plotly.express as px
-def bar_chart(df, x, y, color, title):
-    fig = px.bar(df,x=x,y=y,color = color, title=title)
-    fig.show()
+    def bar_chart(df, x, y, color, title):
+        fig = px.bar(df,x=x,y=y,color = color, title=title)
+        fig.show()
 
-bar_chart(df, x = user_columns, y = user_values, color = user_index, title = "Bar Chart")
+    bar_chart(df, x = user_columns, y = user_values, color = user_index, title = "Bar Chart")
+except KeyError as ke:
+    print('Key Not Found in Columns under Data Summary:', ke)
 # Customize title option??
 
 # Prompt user for input based on above
 # TODO implement this
-print("plotting a histogram of Age...")
-viz.histogram(df['Age'])
+# print("plotting a histogram of Age...")
+# viz.histogram(df['Age'])
 
 # Just example data visualization (top 50 employers kauai)
 path = "sample_data/top-50-employers-kauai.csv"
