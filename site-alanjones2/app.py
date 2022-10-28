@@ -32,17 +32,11 @@ app = Flask(__name__)
 
 
 class ActiveViz: # object to hold parameters for actuve visualization
-    def __init__(self, path, df, features):
-        self.path = None
-        self.df = pd.DataFrame()
-        self.features = self.feats()
-
-        class feats:
-            def __init__(self, avail, selected):
-                self.avail = None
-                self.selected = None
-
-
+    def __init__(self, path=None, df=pd.DataFrame(), features=[], selected=[]):
+        self.path = path
+        self.df = df
+        self.features = features
+        self.selected= selected
 
 
 # call back method, refreshes when data is entered
