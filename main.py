@@ -1,10 +1,12 @@
-import pandas as pd
+import urllib.error
 
-import brains.data.url as url
+import pandas as pd
 # import brains.viz.viz as viz
 import plotly.express as px
 
+import brains.data.url as url
 
+# Test this whole thing with csv Top 50 Employers Kauai
 # TODO actually make a main function and/or wrap this into flask implementation
 
 # Load data
@@ -19,7 +21,6 @@ import plotly.express as px
 
 # Function to summarize dataset
 def data_summarize(df):
-    import pandas as pd
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
     print("-- Data summary --\n")
     print("Columns:")
@@ -33,9 +34,9 @@ def data_summarize(df):
     print(df.sum(numeric_only=True))
     print("Number of unique values for all columns:")
     print(df.nunique())
-    print("* Suggested column fields: 10 unique values or less *")
+    print("* Suggested column fields: 10 unique values or less * \n")
     print("Types of displays possible:")
-    print("Bar Chart, Histogram, Pie Chart, Line Graph")
+    print("Bar Chart, Histogram, Pie Chart, Line Graph \n")
 
 # User prompted to enter dataset
 # User enters dataset url
@@ -51,6 +52,8 @@ while True:
 
     except FileNotFoundError as fnfe:
         print("That is not a correct csv url, please try again.")
+    except urllib.error.HTTPError as ur:
+        print("That is not a correct csv url, please try again.")
 
 # User views data summary
 data_summarize(df)
@@ -59,46 +62,57 @@ data_summarize(df)
 # NOTE: not sure how x, y, color values should correspond to pivot table fields
 
     # NOTE: Annual Sales has a space after (need to correct, but for now type extra space at end)
-print("From the current columns listed above, choose your fields for your pivot table.")
+print("From the columns listed previously, choose your fields for your pivot table.")
 print("Please enter it exactly how it is shown under Columns.")
-try:
-    user_values = input("Please enter values for your pivot table (y values) : ") # Enter Annual Sales with space at end
-    user_index = input("Please enter the index for your pivot table (color) : ") # Enter Contact Gender
-    user_columns = input("Please enter columns for your pivot table (x values) : ") #Enter Private-Govt
 
-    # Pivot table generated based off of user input (if user inputted correctly)
-    def pivot_table(df, values, index, columns, aggfunc):
-        piv_tab = pd.pivot_table(
-            df, values=values,
-            index=index,
-            columns=columns,
-            aggfunc=aggfunc
-        )
-        return piv_tab
+while True:
+    try:
+        user_values = input("Please enter values for your pivot table (y values) : ") # Enter Annual Sales with space at end
+        user_index = input("Please enter the index for your pivot table (color) : ") # Enter Contact Gender
+        user_columns = input("Please enter columns for your pivot table (x values) : ") #Enter Private-Govt
 
-    print("--- Pivot Table ---")
-    print(pivot_table(df,
-            values=[user_values],
-            index=[user_index],
-            columns=[user_columns],
-            aggfunc="sum"))
+        # Pivot table generated based off of user input (if user inputted correctly)
+        def pivot_table(df, values, index, columns, aggfunc):
+            piv_tab = pd.pivot_table(
+                df, values=values,
+                index=index,
+                columns=columns,
+                aggfunc=aggfunc
+            )
+            return piv_tab
 
-    # Prompt user to enter type of data visualization
-    data_vis_options = ["Bar Chart", "Histogram", "Pie Chart", "Line Graph"]
-    user_graph = input("Please enter the type of graph you would like to generate: \n")
-    # This doesn't connect to chosen data vis, just say it is Bar Chart in this case
-    # Work on this some more
+        print("--- Pivot Table ---")
+        print(pivot_table(df,
+                values=[user_values],
+                index=[user_index],
+                columns=[user_columns],
+                aggfunc="sum"))
 
-    # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
-    # Just one of the visualization options -- Bar Chart
+        # Prompt user to enter type of data visualization
+        # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph (letter for letter correct)
+        # Just one of the visualization options -- Bar Chart
+        data_vis_options = ["Bar Chart", "Histogram", "Pie Chart", "Line Graph"]
+        user_graph_title = input("Please enter the title of your graph: \n")
+        user_graph = input("Please enter the type of graph you would like to generate: \n")
+        if user_graph == "Bar Chart":
+            def bar_chart(df, x, y, color, title):
+                fig = px.bar(df, x=x, y=y, color=color, title=title)
+                fig.show()
 
-    def bar_chart(df, x, y, color, title):
-        fig = px.bar(df,x=x,y=y,color = color, title=title)
-        fig.show()
+            bar_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+        # Work on these data visualization types
+        if user_graph == "Histogram":
+            pass
+        if user_graph == "Pie Chart":
+            pass
+        if user_graph == "Line Graph":
+            pass
+        # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
+        break
 
-    bar_chart(df, x = user_columns, y = user_values, color = user_index, title = "Bar Chart")
-except KeyError as ke:
-    print('Key Not Found in Columns under Data Summary:', ke)
+    except KeyError as ke:
+        print('Key Not Found in Columns under Data Summary:', ke)
+        print("Please try to enter chosen field exactly how it appears under Columns.")
 # Customize title option??
 # Just ends if error, find way to retrace back to input where error occured
 
@@ -106,19 +120,6 @@ except KeyError as ke:
 # TODO implement this
 # print("plotting a histogram of Age...")
 # viz.histogram(df['Age'])
-
-# Just example data visualization (top 50 employers kauai)
-path = "sample_data/top-50-employers-kauai.csv"
-df = url.path_to_dataframe(path)
-
-fig = px.bar\
-        (df,
-        x= 'Private-Govt',
-        y = 'Annual Sales',
-        color = 'Contact Gender',
-        title = 'Annual Sales by Sector and Gender'
-        )
-fig.show()
 
 
 
