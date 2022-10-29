@@ -24,7 +24,7 @@ def data_summarize(df):
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
     print("-- Data summary --\n")
     print("Columns:")
-    print(', '.join(df.columns))
+    print(', '.join(df.columns.strip()))
     print("Types of data:")
     print(df.dtypes)
     print("Object Count")
@@ -67,9 +67,9 @@ print("Please enter it exactly how it is shown under Columns.")
 
 while True:
     try:
-        user_values = input("Please enter values for your pivot table (y values) : ") # Enter Annual Sales with space at end
-        user_index = input("Please enter the index for your pivot table (color) : ") # Enter Contact Gender
-        user_columns = input("Please enter columns for your pivot table (x values) : ") #Enter Private-Govt
+        user_columns = input("Please enter columns for your pivot table: ")  # Enter Private-Govt
+        user_index = input("Please enter the index for your pivot table: ") # Enter Contact Gender
+        user_values = input("Please enter values for your pivot table: ")  # Enter Annual Sales with space at end
 
         # Pivot table generated based off of user input (if user inputted correctly)
         def pivot_table(df, values, index, columns, aggfunc):
@@ -104,17 +104,17 @@ while True:
                 vis_entered = True
 
             elif user_graph == "Histogram":
-                def histogram(df, x, y, color, title):
-                    fig = px.histogram(df, x=x, y=y, color=color, title=title)
+                def histogram(df, x, title):
+                    fig = px.histogram(df, x=x, title=title)
                     fig.show()
-                histogram(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                histogram(df, x=user_columns, title=user_graph_title)
                 vis_entered = True
 
             elif user_graph == "Pie Chart":
-                def pie_chart(df, x, y, color, title):
-                    fig = px.pie(df, values='pop', names='country', title='Population of European continent')
+                def pie_chart(df, values, names, title):
+                    fig = px.pie(df, values=values, names=names, title=title)
                     fig.show()
-                pie_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                pie_chart(df, values=user_values, names=user_columns, title=user_graph_title)
                 vis_entered = True
 
             elif user_graph == "Line Graph":
