@@ -94,19 +94,38 @@ while True:
         data_vis_options = ["Bar Chart", "Histogram", "Pie Chart", "Line Graph"]
         user_graph_title = input("Please enter the title of your graph: \n")
         user_graph = input("Please enter the type of graph you would like to generate: \n")
-        if user_graph == "Bar Chart":
-            def bar_chart(df, x, y, color, title):
-                fig = px.bar(df, x=x, y=y, color=color, title=title)
-                fig.show()
+        vis_entered = False
+        while vis_entered == False:
+            if user_graph == "Bar Chart":
+                def bar_chart(df, x, y, color, title):
+                    fig = px.bar(df, x=x, y=y, color=color, title=title)
+                    fig.show()
+                bar_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                vis_entered = True
 
-            bar_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
-        # Work on these data visualization types
-        if user_graph == "Histogram":
-            pass
-        if user_graph == "Pie Chart":
-            pass
-        if user_graph == "Line Graph":
-            pass
+            elif user_graph == "Histogram":
+                def histogram(df, x, y, color, title):
+                    fig = px.histogram(df, x=x, y=y, color=color, title=title)
+                    fig.show()
+                histogram(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                vis_entered = True
+
+            elif user_graph == "Pie Chart":
+                def pie_chart(df, x, y, color, title):
+                    fig = px.pie(df, values='pop', names='country', title='Population of European continent')
+                    fig.show()
+                pie_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                vis_entered = True
+
+            elif user_graph == "Line Graph":
+                def line_chart(df, x, y, color, title):
+                    fig = px.line(df, x=x, y=y, color = color, title=title)
+                    fig.show()
+                line_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
+                vis_entered = True
+
+            else:
+                print("Incorrect type of data visualization option. Please try again.")
         # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
         break
 
