@@ -19,19 +19,21 @@ import brains.data.url as url
 # based off of what is given in data summary)
 # e.g. suggesting to use values that aren't unique, columns will be ideally 10 or less fields
 
+# Can't figure out how to get rid of trailing and leading whitespace for columns
 # Function to summarize dataset
 def data_summarize(df):
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
     print("-- Data summary --\n")
     print("Columns:")
-    series_columns = df.columns
-    index_string = ""
-    for column in series_columns:
-        ref_column = column.strip()
-        index_string += ref_column + "|"
-    index_list = list(index_string.split("|"))
-    print(', '.join(index_list))
-    df.reindex(index_list)
+    print(', '.join(df.columns))
+    # series_columns = df.columns
+    # index_string = ""
+    # for column in series_columns:
+    #     ref_column = column.strip()
+    #     index_string += ref_column + "|"
+    # index_list = list(index_string.split("|"))
+    # print(', '.join(index_list))
+    # df = df.reindex(index_list)
     print("Types of data:")
     print(df.dtypes)
     print("Object Count")
@@ -44,6 +46,7 @@ def data_summarize(df):
     print("* Suggested column fields: 10 unique values or less * \n")
     print("Types of displays possible:")
     print("Bar Chart, Histogram, Pie Chart, Line Graph \n")
+    return df
 
 # User prompted to enter dataset
 # User enters dataset url
@@ -60,6 +63,8 @@ while True:
     except FileNotFoundError as fnfe:
         print("That is not a correct csv url, please try again.")
     except urllib.error.HTTPError as ur:
+        print("That is not a correct csv url, please try again.")
+    except urllib.error.URLError as ure:
         print("That is not a correct csv url, please try again.")
 
 # User views data summary
