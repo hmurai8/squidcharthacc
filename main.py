@@ -24,7 +24,14 @@ def data_summarize(df):
     pd.set_option('display.float_format', lambda x: '%.0f' % x)
     print("-- Data summary --\n")
     print("Columns:")
-    print(', '.join(df.columns.strip()))
+    series_columns = df.columns
+    index_string = ""
+    for column in series_columns:
+        ref_column = column.strip()
+        index_string += ref_column + "|"
+    index_list = list(index_string.split("|"))
+    print(', '.join(index_list))
+    df.reindex(index_list)
     print("Types of data:")
     print(df.dtypes)
     print("Object Count")
@@ -132,6 +139,8 @@ while True:
     except KeyError as ke:
         print('Key Not Found in Columns under Data Summary:', ke)
         print("Please try to enter chosen field exactly how it appears under Columns.")
+
+#CONTINUE PROGRAM: Does user want to redo graph?
 # Customize title option??
 # Just ends if error, find way to retrace back to input where error occured
 
