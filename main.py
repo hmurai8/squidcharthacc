@@ -3,7 +3,6 @@ import urllib.error
 import pandas as pd
 # import brains.viz.viz as viz
 import plotly.express as px
-import py as py
 
 import brains.data.url as url
 
@@ -106,8 +105,6 @@ def user_generation():
                 def bar_chart(df, x, y, color, title):
                     fig = px.bar(df, x=x, y=y, color=color, title=title)
                     fig.show()
-                    gen_url = py.iplot(fig, filename='bar chart')
-                    print(gen_url)
                 bar_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
                 break
 
