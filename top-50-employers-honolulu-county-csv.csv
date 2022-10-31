@@ -1,0 +1,209 @@
+Rank,Name,Physical Location,Mailing Address,Landmark Address,Telephone,Contact First Name,Contact Last Name,Contact Title,Contact Gender,Contact Email,Toll-Free Phone,Fax Number,Web Url,Census Tract,Census Block Grp,Business Description,NAICS-Primary,Private-Govt,Business Location Status,Emp Size,Annual Sales ,Yr. Estab,Last Update,Release
+1,Altres Industrial,"967 Kapiolani Blvd
+Honolulu, HI 96814
+(21.297792, -157.851824)","PO Box 1410
+Honolulu, HI 96807","The Altres Bldg
+Honolulu, HI 96814",8085914951,Kerry,Kopp,President,F,KERRY.KOPP@ALTRES.COM,8888681600,8085918420,http://ALTRES.COM,003700,2,Personnel Consultants,54161200,Private,Single location,"10,000+",1016879000,1969,201612,172
+2,Kapiolani Medical Ctr,"1319 Punahou St # 630
+Honolulu, HI 96826
+(21.30025, -157.834323)",,"Kapiolani Medical Ctr
+Honolulu, HI 96826",8089836000,Martha,Smith,CEO,F,,8008508916,8089836086,http://KAPIOLANI.ORG,003502,1,Hospitals,62211000,Private,Subsidiary HQ,"5,000-9,999",,1921,201511,172
+3,Queen's Medical Ctr,"1301 Punchbowl St
+Honolulu, HI 96813
+(21.308049, -157.855036)",,"Queens Medical Ctr
+Honolulu, HI 96813",8086915100,Arthur,Ushijima,President,M,AUSHIJIMA@QUEENS.ORG,8003425901,8085855095,http://QUEENSMEDICALCENTER.ORG,004100,2,Hospitals,62211000,Private,Subsidiary HQ,"1,000-4,999",,1984,201509,172
+4,Hawaii Health Systems Corp,"3675 Kilauea Ave
+Honolulu, HI 96816
+(21.273637, -157.801235)",,"Leahi Hospital
+Honolulu, HI 96816",8087334020,Bruce,Anderson,CEO,M,BANDERSON@HHSC.ORG,,8087334028,http://HHSC.ORG,000800,4,Health Care Management,54161100,Private,HQ/home office,"1,000-4,999",,1996,201612,172
+5,Hawaii State-Police Dept,"801 S Beretania St
+Honolulu, HI 96813
+(21.304709, -157.851961)",,,8085293111,Louis,Kealoha,Manager,M,LKEALOHA@HONOLULU.GOV,,,http://HAWAII.GOV,004100,2,Government Offices-State,92112000,State,Single location,"1,000-4,999",,2013,201605,172
+6,Tripler Army Medical Ctr,"1 Jarrett White Rd
+Tripler AMC, HI 96859
+(21.360799, -157.888652)",,"Tripler Hospital
+Tripler AMC, HI 96859",8084336661,David K,Dunning,Exec Officer,M,,,8084331554,http://TAMC.AMEDD.ARMY.MIL,006701,3,Hospitals,62211000,Federal,Branch office,"1,000-4,999",,1989,201607,172
+7,Bank of Hawaii,"111 S King St # 101
+Honolulu, HI 96813
+(21.30907, -157.862034)","PO Box 2900
+Honolulu, HI 96846","Financial Plaza of the Pacific
+Honolulu, HI 96813",8085384171,Peter S,Ho,CEO,M,PETER.HO@BOH.COM,8004516022,8082332053,http://BOH.COM,004000,2,Banks,52211000,Private,Subsidiary HQ,"1,000-4,999",,1897,201502,172
+8,Bank of Hawaii Corp,"130 Merchant St # 810
+Honolulu, HI 96813
+(21.308302, -157.862394)","PO Box 2900
+Honolulu, HI 96846","Financial Plaza of the Pacific
+Honolulu, HI 96813",8086948000,Peter S,Ho,CEO,M,PHO@BOH.COM,8886433888,8085369433,http://BOH.COM,004000,2,Holding Companies (bank),55111100,Private,HQ/home office,"1,000-4,999",,1971,199209,172
+9,Aloha Air Cargo,"371 Aokea Pl
+Honolulu, HI 96819
+(21.331873, -157.92797)","PO Box 30900
+Honolulu, HI 96820","Honolulu International Airport
+Honolulu, HI 96819",8088364191,Michael,Orozco,Director,M,MOROZCO@ALOHAAIRCARGO.COM,,,http://ALOHAAIRCARGO.COM,980200,1,Air Cargo Service,48111200,Private,Subsidiary HQ,"1,000-4,999",,1946,201602,172
+10,Hawaiian Electric Co Inc,"820 Ward Ave
+Honolulu, HI 96814
+(21.300215, -157.851701)","PO Box 2750
+Honolulu, HI 96803",,8085487311,Ken,Aramaki,Other,M,,,,http://HAWAIIANELECTRIC.COM,003800,1,Electric Companies,22112200,Private,Branch office,"1,000-4,999",940760000,1965,201612,172
+11,Hilton-Hawaiian Village Waikiki,"2005 Kalia Rd
+Honolulu, HI 96815
+(21.284157, -157.835633)",,"Hilton Hawaiian Vlg
+Honolulu, HI 96815",8089494321,Debbie,Bishop,General Mgr,F,DEBBIE.BISHOP@HILTON.COM,8002758777,8089477800,http://HILTON.COM,001901,1,Tubes-Rental,53228400,Private,Branch office,"1,000-4,999",183817000,1955,201607,172
+12,Straub Clinic & Hospital,"888 S King St
+Honolulu, HI 96813
+(21.30231, -157.850939)",,"Straub Clinic & Hospital
+Honolulu, HI 96813",8085224000,Art,Gladstone,CEO,M,ARTG@KAPIOLANI.ORG,8002329491,8085224111,http://STRAUBHEALTH.ORG,004100,2,Hospitals,62211000,Private,Subsidiary HQ,"1,000-4,999",,1921,201511,172
+13,Outrigger Enterprises Group,"2375 Kuhio Ave
+Honolulu, HI 96815
+(21.278162, -157.824739)",,,8089216600,W David P,Carey III,CEO,M,,,8089216595,http://OUTRIGGER.COM,002004,1,Hotel & Motel Management,72111000,Private,HQ/home office,"1,000-4,999",,1947,201611,172
+14,Kaiser Permanente Medical Ctr,"3288 Moanalua Rd
+Honolulu, HI 96819
+(21.362397, -157.90022)",,"Kaiser Medical Hospital
+Honolulu, HI 96819",8084320000,Thomas,Risse,Vice President,M,,,,http://KAISERPERMANENTE.ORG,006701,1,Hospitals,62211000,Private,Branch office,"1,000-4,999",289176000,1999,201512,172
+15,Hawaii Medical Svc Assn,"818 Keeaumoku St # 200
+Honolulu, HI 96814
+(21.296658, -157.841046)",,,8089486355,Michael A,Gold,CEO,M,MICHAEL_GOLD@HMSA.COM,,8089485567,http://COMM-JOBS.COM,003601,1,Insurance,52421000,Private,Single location,"1,000-4,999",76086000,1938,201608,172
+16,Honolulu Intl Airport-HNL,"300 Rodgers Blvd # 12
+Honolulu, HI 96819
+(21.335007, -157.923452)",,"Honolulu International Airport
+Honolulu, HI 96819",8088366411,Roy,Sakata,Manager,M,,,8088366682,http://HAWAII.GOV,980200,1,Airports,48811900,Private,Single location,"1,000-4,999",160052000,2012,201612,172
+17,Adjutant General,"3949 Diamond Head Rd
+Honolulu, HI 96816
+(21.26141, -157.796553)",,,8087334246,Robert G F,Lee,Manager,M,,,8087334238,,000600,2,Government Offices-State,92112000,State,HQ/home office,"1,000-4,999",,1993,201606,172
+18,Roberts Overnighters,"680 Iwilei Rd # 700
+Honolulu, HI 96817
+(21.316322, -157.870376)",,"Dole Office Bldg
+Honolulu, HI 96817",8085239323,Troy,Iwamoto,Manager,M,TI@ROBERTSHAWAII.COM,8007677551,8085227870,http://ROBERTSHAWAII.COM,005700,1,Sightseeing Tours,48799000,Private,Branch office,"1,000-4,999",151379000,1991,201606,172
+19,Kuakini Emergency Svc,"347 N Kuakini St
+Honolulu, HI 96817
+(21.322191, -157.856255)",,"Kuakini Medical Ctr
+Honolulu, HI 96817",8085479593,June,Drewmeller,Vice President,F,,,8085479547,http://KUAKINI.ORG,005000,3,Services NEC,54199000,Private,Branch office,"1,000-4,999",135084000,2002,201607,172
+20,Kapi'olani Health,"1319 Punahou St
+Honolulu, HI 96826
+(21.299943, -157.834509)",,"Kapiolani Medical Ctr
+Honolulu, HI 96826",8089836000,Chuck,Sted,CEO,M,CHUCK@KAPIOLANI.ORG,,,http://HAWAIIPACIFICHEALTH.ORG,002600,3,Health Services,62199900,Private,Single location,"1,000-4,999",170276000,1921,201502,172
+21,Oahu Transit Svc Inc,"811 Middle St # 225
+Honolulu, HI 96819
+(21.336578, -157.885469)",,,8088484400,Roger,Morton,President,M,,,8088484417,,006000,1,Transit Lines,48511900,Private,Single location,"1,000-4,999",200967000,1991,201612,172
+44,Grand Waikikian Suites,"1811 Ala Moana Blvd
+Honolulu, HI 96815
+(21.284488, -157.837677)",,,8089532700,,,,U,,,,,001901,1,Resorts,72119900,Private,Branch office,500-999,117878000,2013,201607,172
+22,Sheraton Waikiki,"2255 Kalakaua Ave # 300
+Honolulu, HI 96815
+(21.278508, -157.828308)","PO Box 8559
+Honolulu, HI 96830","Sheraton Waikiki Hotel
+Honolulu, HI 96815",8089224422,Randall,Ha,General Mgr,M,,8003253535,8089318883,http://STARWOODHOTELS.COM/SHERATON,001901,1,Hotels & Motels,72111000,Private,Branch office,"1,000-4,999",153783000,1988,201607,172
+23,Pali Momi Medical Ctr,"98-1079 Moanalua Rd # 680
+Aiea, HI 96701
+(21.383157, -157.938189)",,"Kapiolani Medical Ctr
+Aiea, HI 96701",8084866000,Jen,Chahanovich,CEO,F,JENC@KAPIOLANI.ORG,,8084854400,http://PALIMOMI.ORG,007808,2,Hospitals,62211000,Private,Subsidiary HQ,"1,000-4,999",,1921,201506,172
+24,Polynesian Cultural Ctr,"55-370 Kamehameha Hwy
+Laie, HI 96762
+(21.637902, -157.919716)","PO Box 51
+Hauula, HI 96717",,8082933005,Alfred,Grace,CEO,M,,8003677060,8082933022,http://POLYNESIA.COM,010202,1,Cultural Centres,71211000,Private,Single location,"1,000-4,999",,1963,201411,172
+25,Castle Resorts & Hotels Inc,"500 Ala Moana Blvd # 3555
+Honolulu, HI 96813
+(21.301121, -157.863057)",,"Waterfront Plz
+Honolulu, HI 96813",8085453510,Rick,Wall,CEO,M,RICK@CASTLERESORTS.COM,8007337753,8085219994,http://CASTLERESORTS.COM,003900,1,Hotel & Motel Management,72111000,Private,Subsidiary HQ,"1,000-4,999",,1994,201701,172
+26,Corrections Facility,"647 Laumaka St
+Honolulu, HI 96819
+(21.332029, -157.883088)",,,8088325825,Michael,Hoffman,Manager,M,,,8088325830,,006000,1,State Govt-Correctional Institutions,92214000,State,Single location,"1,000-4,999",,1994,201606,172
+27,Honolulu Environmental Svc,"1000 Uluohia St # 308
+Kapolei, HI 96707
+(21.329962, -158.081584)",,,8087683486,Lori,Kahikina,Director,F,LKAHIKINA@HONOLULU.GOV,8008389976,8087683487,,011500,1,"Government Offices-City, Village & Twp",92112000,Municipal,Single location,"1,000-4,999",,2004,201606,172
+28,Thomas Hale Hamilton Library,"2550 Mccarthy Mall
+Honolulu, HI 96822
+(21.300051, -157.816244)",,"University of Hawaii At Manoa
+Honolulu, HI 96822",8089567203,Paula,Mochida,Manager,F,UHMLIB@HAWAII.EDU,,8089565968,,002701,1,Libraries-Institutional,51912000,Municipal,HQ/home office,"1,000-4,999",,1907,201603,172
+29,Sheraton Princess Kaiulani,"120 Kaiulani Ave
+Honolulu, HI 96815
+(21.277024, -157.825472)",,"Sheraton Princess Kaiulani
+Honolulu, HI 96815",8089225811,Frederick,Orr,General Mgr,M,FREDERICK.ORR@SHERATON.COM,8003253535,8089314577,http://STARWOODHOTELS.COM/SHERATON,002004,1,Hotels & Motels,72111000,Private,Branch office,"1,000-4,999",153783000,1955,201701,172
+30,Royal Hawaiian A Luxury,"2259 Kalakaua Ave
+Honolulu, HI 96815
+(21.278448, -157.828294)",,"Royal Hawaiian Hotel
+Honolulu, HI 96815",8089237311,Bill,Hedgepeth,Director,M,,8003253589,8089317098,http://STARWOODHOTELS.COM,001901,1,Resorts,72119900,Private,Branch office,"1,000-4,999",168396000,1906,201607,172
+31,Naoky Cs Tsai Inc,"640 Ulukahiki St
+Kailua, HI 96734
+(21.381426, -157.757181)",,"Castle Medical Ctr
+Kailua, HI 96734",8082635174,Norma,Livingston,Office Manager,F,,,,,011000,1,Physicians & Surgeons,62111100,Private,Single location,"1,000-4,999",194549000,2012,201701,172
+32,Servco Pacific Inc,"2850 Pukoloa St # 300
+Honolulu, HI 96819
+(21.344434, -157.89814)",,"Servco Mapunapuna Plz
+Honolulu, HI 96819",8085641300,Mark,Fukunaga,CEO,M,MARK.FUKUNAGA@SERVCO.COM,,,http://SERVCO.COM,981300,1,Automobile Dealers-New Cars,44111000,Private,HQ/home office,"1,000-4,999",,2006,201505,172
+33,Kuakini Health System,"347 N Kuakini St
+Honolulu, HI 96817
+(21.322287, -157.856305)",,"Kuakini Medical Ctr
+Honolulu, HI 96817",8085362236,Gary K,Kajiwara,CEO,M,G.KAJIWARA@KUAKINI.ORG,,8085479547,http://KUAKINI.ORG,005000,3,Hospitals,62211000,Private,HQ/home office,500-999,,1900,201606,172
+34,Hale Koa Hotel,"2055 Kalia Rd
+Honolulu, HI 96815
+(21.282335, -157.833809)",,,8089550555,Cy,Hirotsu,Vice President,M,,,,http://HALEKOA.COM,001901,1,Hotels & Motels,72111000,Private,Single location,500-999,151557000,1906,201606,172
+35,Honolulu Advertiser,"605 Kapiolani Blvd
+Honolulu, HI 96813
+(21.302966, -157.855325)","PO Box 3110
+Honolulu, HI 96802",,8085386397,Michael J,Fisch,CEO,M,,,8085258307,http://BUYNSELLHAWAII.COM,003800,1,Newspapers (publishers/Mfrs),51111000,Private,Single location,500-999,116240000,1856,201608,172
+36,Hyatt Regency-Waikiki Beach,"2424 Kalakaua Ave
+Honolulu, HI 96815
+(21.276029, -157.825497)",,"Hyatt Regency Waikiki Resort
+Honolulu, HI 96815",8089231234,David,Nadelman,General Mgr,M,DAVID.NADELMAN@HYATT.COM,8002331234,8082376119,http://REGENCY.HYATT.COM,001801,1,Hotels & Motels,72111000,Private,Branch office,500-999,143137000,1976,201612,172
+37,Halekulani,"2199 Kalia Rd
+Honolulu, HI 96815
+(21.278446, -157.831749)",,"Halekulani Hotel
+Honolulu, HI 96815",8089232311,Ulrich,Krauer,General Mgr,M,,,8085368794,http://HALEKULANICORPORATION.COM,001901,1,Hotels & Motels,72111000,Private,Single location,500-999,138590000,1980,201612,172
+38,Orchids,"2199 Kalia Rd
+Honolulu, HI 96815
+(21.278424, -157.831768)",,"Halekulani Hotel
+Honolulu, HI 96815",8089232311,Nicole,Bonenfant,Administrator,F,,8003672343,8089268004,http://HALEKULANI.COM/LIVING/DINING/ORCHIDS,001901,1,Restaurants,72251100,Private,Single location,500-999,52380000,1965,201611,172
+39,Hawaiian Telcom Inc,"1177 Bishop St
+Honolulu, HI 96813
+(21.310291, -157.858992)","PO Box 30770
+Honolulu, HI 96820","Hawaiian Telcom Bldg
+Honolulu, HI 96813",8086433456,Eric K,Yeaman,CEO,M,ERIC.YEAMAN@HAWAIIANTEL.COM,,8085466194,http://HAWAIIANTEL.COM,004000,1,Telecommunications Services,51791900,Private,Subsidiary HQ,500-999,,1938,201511,172
+40,Monarch Room,"2259 Kalakaua Ave
+Honolulu, HI 96815
+(21.278448, -157.828294)",,"Royal Hawaiian Hotel
+Honolulu, HI 96815",8089317430,Haley,Albertson,Director,F,,,,,001901,1,Hotels & Motels,72111000,Private,Single location,500-999,,1997,201610,172
+41,Castle Medical Ctr,"640 Ulukahiki St
+Kailua, HI 96734
+(21.381454, -157.757176)",,"Castle Medical Ctr
+Kailua, HI 96734",8082635500,Kathryn,Raethel,CEO,F,,,8082635123,http://CASTLEMED.ORG,011000,1,Hospitals,62211000,Private,Subsidiary HQ,500-999,,1988,201510,172
+42,Dfs Galleria,"330 Royal Hawaiian Ave # 200
+Honolulu, HI 96815
+(21.280072, -157.82855)","PO Box 29500
+Honolulu, HI 96820",,8089312700,Bruce,L'Orang,Manager,M,,,8089312615,http://DFS.COM,002003,2,Gift Shops,45322000,Private,Single location,500-999,114580000,2002,201612,172
+43,Waianae Coast Co Health Ctr,"86-260 Farrington Hwy
+Waianae, HI 96792
+(21.429862, -158.181555)",,"Waianae Coast Comp Health Ctr
+Waianae, HI 96792",8086973499,Edward,Ho,Manager,M,,,8086973670,http://WCCHC.COM,009703,1,Emergency Medical & Surgical Service,62211000,Private,Single location,500-999,130849000,2008,201607,172
+45,Hawaiian Building Maintenance,"1001 Bishop St # 955
+Honolulu, HI 96813
+(21.308934, -157.860826)",,"American Savings Bank Tower
+Honolulu, HI 96813",8085374561,Jim,Walters,President,M,JAMES.WALTERS@HBMHAWAII.COM,,8085316946,,004000,1,Janitor Service,56172000,Private,Single location,500-999,78363000,1956,201502,172
+46,Westin Moana Surfrider Hotel,"2365 Kalakaua Ave
+Honolulu, HI 96815
+(21.276658, -157.826273)",,"Sheraton Moana Surfrider Hotel
+Honolulu, HI 96815",8089223111,Larry,Hanson,General Mgr,M,LAWRENCE.HANSON@WESTIN.COM,,,http://STARWOODHOTELS.COM/WESTIN,001901,1,Hotels & Motels,72111000,Private,Branch office,500-999,109458000,2016,201701,172
+47,Times Super Market,"1620 N School St # 106
+Honolulu, HI 96817
+(21.335485, -157.867944)",,"Kamehameha Shopping Ctr
+Honolulu, HI 96817",8088328262,Karl,Wissman,President,M,,,8085647420,http://TIMESSUPERMARKETS.COM,004800,4,Grocers-Retail,44511000,Private,Branch office,500-999,163698000,1940,201606,172
+48,Marriott-Waikiki Beach Resort,"2552 Kalakaua Ave
+Honolulu, HI 96815
+(21.272528, -157.823234)",,"Waikiki Beach Marriott Resort
+Honolulu, HI 96815",8089226611,Reynold,Childs,Director,M,REYNOLDCHILDS@MARRIOTT.COM,8002289290,8089215255,http://MARRIOTT.COM,001801,2,Hotels & Motels,72111000,Private,Branch office,500-999,106090000,2005,201405,172
+49,Oahu Community Correctional,"2199 Kamehameha Hwy
+Honolulu, HI 96819
+(21.330638, -157.884253)",,,8088321777,,,,U,,,8088321412,,005900,1,State Govt-Correctional Institutions,92214000,State,Branch office,500-999,,1989,201605,172
+50,Diagnostic Laboratory Svc Inc,"99 Iwaiwa St # 859
+Aiea, HI 96701
+(21.385558, -157.935969)",,,8085895100,Richard,Okazaki,President,M,,,,http://DLSLAB.COM,007807,3,Laboratories-Testing,54138000,Private,Subsidiary HQ,500-999,,1995,201509,172
+51,Shirokiya,"1450 Ala Moana Blvd # 2250
+Honolulu, HI 96814
+(21.290339, -157.845754)",,"Ala Moana Ctr
+Honolulu, HI 96814",8089739111,Patrick,Ho,Manager,M,,,,http://JAPANVILLAGEWALK.COM,003700,2,Department Stores,45221000,Private,Single location,500-999,156596000,1993,201607,172
+52,Costco Wholesale,"525 Alakawa St
+Honolulu, HI 96817
+(21.319265, -157.870963)",,,8085266100,Robert,Loomis,Site Manager,M,W687MGR@COSTCO.COM,8007742678,4253136922,http://COSTCO.COM,005700,1,Wholesale Clubs,45231100,Private,Branch office,500-999,86875000,2007,201502,172
+53,Turtle Bay Resort,"57-091 Kamehameha Hwy
+Kahuku, HI 96731
+(21.697684, -157.991787)",,,8082938811,Danna,Holck,Vice President,F,DHOLCK@TURTLEBAYRESORT.COM,8002938574,8082939147,http://TURTLEBAYRESORT.COM,010100,3,Resorts,72119900,Private,Branch office,500-999,101038000,1951,201508,172
+54,Punahou School,"1601 Punahou St
+Honolulu, HI 96822
+(21.304151, -157.831129)",,,8089445711,Kevin,Conway,Principal,M,KCONWAY@PUNAHOU.EDU,,8089445779,http://PUNAHOU.EDU,002702,1,Schools,61111000,Private,Single location,500-999,,1990,201606,172
