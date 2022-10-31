@@ -28,14 +28,6 @@ def data_summarize(df):
     print("-- Data summary --\n")
     print("Columns:")
     print(', '.join(df.columns))
-    # series_columns = df.columns
-    # index_string = ""
-    # for column in series_columns:
-    #     ref_column = column.strip()
-    #     index_string += ref_column + "|"
-    # index_list = list(index_string.split("|"))
-    # print(', '.join(index_list))
-    # df = df.reindex(index_list)
     print("Types of data:")
     print(df.dtypes)
     print("Object Count")
@@ -168,5 +160,13 @@ while True:
 # print("plotting a histogram of Age...")
 # viz.histogram(df['Age'])
 
+# series_columns = df.columns
+# index_string = ""
+# for column in series_columns:
+#     ref_column = column.strip()
+#     index_string += ref_column + "|"
+# index_list = list(index_string.split("|"))
+# print(', '.join(index_list))
+# df = df.reindex(index_list)
 
 
