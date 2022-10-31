@@ -48,21 +48,24 @@ def data_summarize(df):
 # User prompted to enter dataset
 # User enters dataset url
 # Loops til user enter correct csv url
-while True:
-    try:
-        path = input("Please enter the csv url for data visualization: \n")
-        df = url.path_to_dataframe(path)
-        break
+# while True:
+#     try:
+#         path = input("Please enter the csv url for data visualization: \n")
+#         df = url.path_to_dataframe(path)
+#         break
+
+path = input("Please enter the csv url for data visualization: \n")
+df = url.path_to_dataframe(path)
 
 #TODO make module/function for this
 # e.g. data.summarize(df)
-
-    except FileNotFoundError as fnfe:
-        print("That is not a correct csv url, please try again.")
-    except urllib.error.HTTPError as ur:
-        print("That is not a correct csv url, please try again.")
-    except urllib.error.URLError as ure:
-        print("That is not a correct csv url, please try again.")
+#
+#     except FileNotFoundError as fnfe:
+#         print("That is not a correct csv url, please try again.")
+#     except urllib.error.HTTPError as ur:
+#         print("That is not a correct csv url, please try again.")
+#     except urllib.error.URLError as ure:
+#         print("That is not a correct csv url, please try again.")
 
 # User views data summary
 data_summarize(df)

@@ -6,6 +6,10 @@ import plotly
 import plotly.express as px
 
 
+def jsondump(fig):
+    return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
+
 def histogram(data,xlabel=None,ylabel="counts",title=None, mode="JSON"):
     """
     Display a histogram of the data
@@ -29,8 +33,34 @@ def histogram(data,xlabel=None,ylabel="counts",title=None, mode="JSON"):
     #     plt.title(title)
 
     if mode == "JSON":
-        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-        return graphJSON
+        return jsondump(fig)
+    else:
+        return fig
+
+
+def bar(data,xlabel=None,ylabel="counts",title=None, mode="JSON"):
+    fig = px.bar(data)
+
+    if mode == "JSON":
+        return jsondump(fig)
+    else:
+        return fig
+
+
+def pie(data, xlabel=None, ylabel="counts", title=None, mode="JSON"):
+    fig = px.pie(data)
+
+    if mode == "JSON":
+        return jsondump(fig)
+    else:
+        return fig
+
+
+def line(data, xlabel=None, ylabel="counts", title=None, mode="JSON"):
+    fig = px.line(data)
+
+    if mode == "JSON":
+        return jsondump(fig)
     else:
         return fig
 

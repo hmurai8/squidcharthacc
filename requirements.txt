@@ -1,0 +1,7 @@
+python=3.10
+pandas
+numpy
+matplotlib
+flask
+plotly
+gunicorn
