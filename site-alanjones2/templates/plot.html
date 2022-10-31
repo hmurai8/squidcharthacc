@@ -16,9 +16,10 @@
 
 <body style="font-family:arial, sans-serif">
     <h1>SquidBrainsAreShapedLikeDonuts</h1>
-    <h2>Select your dataset</h2>
-    <p>Copy and paste the url for the CSV</p>
-    <input type="text" id="fname" name="fname" onchange="cb(this.value)">
+
+    <div id="chart" class="chart"></div>
+
+    <p>This is  your data</p>
 
     <div id="data" class="datatab"></div>
     {% for table in tables %}
@@ -26,25 +27,14 @@
             {{ table|safe }}
     {% endfor %}
 
-    {% for title in titles %}
-        <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
-    {% endfor %}
-
+    <p>Pick which stuff you like post</p>
     <form method="post">
+        {% for title in titles %}
+            <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
+        {% endfor %}
         <input type="submit" name="button" value="plot"> <br/>
-        <input type="submit" name="button" value="fetch_data"> <br/>
+        <input type="submit" name="button" value="reset"> <br/>
     </form>
-
-    <form method="post" action="/select">
-      <select id="operator" name="operator">
-          <option value="=">=</option>
-          <option value=">">></option>
-          <option value="<"><</option>
-      </select>
-      <input type="submit" value="Submit">
-    </form>
-
-    <div id="chart" class="chart"></div>
 </body>
 
 <script>

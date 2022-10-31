@@ -2,12 +2,8 @@
 
 from flask import Flask, config, render_template, request, session
 import pandas as pd
-import json
-import plotly
-import plotly.express as px
 
 # Bug 14 fix: https://www.geeksforgeeks.org/python-import-from-parent-directory/
-
 import sys
 import os
 
@@ -40,65 +36,52 @@ def df_session_load(): # because we will do this often, just want a fast way to 
 def update_data(form):
     """Update the dataframe"""
 
-    session['path'] = form
+    session['path'] = form['fname']
+    df = url.path_to_dataframe(session['path'])
+    session['df'] = df.to_json()
+    return
 
 
-# call back method, refreshes when data is entered
-@app.route('/callback', methods=['POST', 'GET'])
-def cb():
-    print(request.args.get('data'))
-    return plot(request.args.get('data'),session['features']) # calls a function to update
+def get_features(form):
+    """Update the dataframe"""
+
+    print("form:")
+    print(form)
+    session['selected'] = form.getlist('selected')
+    return
 
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    # return render_template('chartsajax.html', graphJSON=gm())
-    path = "../sample_data/example.csv"
-
-    # session['viz'] = ActiveViz(path)
-
-    session['path'] = path  # location of data
-    df = url.path_to_dataframe(session['path'])
-    session['df'] = df.to_json()
-    # session['features'] = df.columns
-    session['selected'] = ['Age']
 
     if request.method == 'POST':
-        if request.form['button'] == "data_fetch":
+        if request.form['button'] == "fetch_data":
             print('Fetching data...')
-            pass
+            update_data(request.form)
+            df = df_session_load()
+            print(session)
+            return render_template('select.html', tables=[df.to_html(classes='data')], titles=df.columns.values)
         elif request.form['button'] == "plot":
+            print('Plotting')
+            get_features(request.form)
             print('plotting data...')
-            return render_template('chartsajax.html', graphJSON=plot(session['path'], session['selected']),
-                                   tables=[df.to_html(classes='data')], titles=df.columns.values)
+            df = df_session_load()
+            return render_template('plot.html', graphJSON=plot(),tables=[df.to_html(classes='data')], titles=df.columns.values)
             # pass
         else:
+            # TODO add reset button to each page
             print('reset')
             return render_template('start.html')
             pass
-        print("request form: ")
-        print(request.form)
-        # print(request.form['plot_button'])
-        print('Button pressed')
     else:
         return render_template("start.html")
 
 
+def plot(): # TODO add plot type and feature selection trhough callbacks
 
-
-    # TODO render a page with a feature selection option and a plot button
-    # print(df.columns.values)
-    return render_template('chartsajax.html', graphJSON=plot(session['path'],session['selected']), tables=[df.to_html(classes='data')], titles=df.columns.values)
-
-
-def plot(path, features): # TODO add plot type and feature selection trhough callbacks
-    # plot the stuff
-    print("Path: " + path)
-    session['path'] = path
     # try:
     df = df_session_load()
-    fig = pp.histogram(df[features])
-    # except:
-    #     fig = None
+
+    fig = pp.histogram(df[session['selected']])
 
     return fig

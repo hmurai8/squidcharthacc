@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>SquidBrainsAreShapedLikeDonuts</h1>
+    <p>This is your data</p>
+
+    <div id="data" class="datatab"></div>
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+    <p>Pick which stuff you like post</p>
+    <form method="post">
+        {% for title in titles %}
+            <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
+        {% endfor %}
+        <input type="submit" name="button" value="plot"> <br/>
+        <input type="submit" name="button" value="reset"> <br/>
+    </form>
+
+</body>
+
+</html>

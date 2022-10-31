@@ -28,8 +28,6 @@ def histogram(data,xlabel=None,ylabel="counts",title=None, mode="JSON"):
     # if title is not None:
     #     plt.title(title)
 
-    print(fig.data[0])
-
     if mode == "JSON":
         graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
         return graphJSON
