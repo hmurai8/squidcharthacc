@@ -3,8 +3,10 @@ import urllib.error
 import pandas as pd
 # import brains.viz.viz as viz
 import plotly.express as px
+import py as py
 
 import brains.data.url as url
+
 
 # Test this whole thing with csv Top 50 Employers Kauai
 # TODO actually make a main function and/or wrap this into flask implementation
@@ -46,7 +48,6 @@ def data_summarize(df):
     print("* Suggested column fields: 10 unique values or less * \n")
     print("Types of displays possible:")
     print("Bar Chart, Histogram, Pie Chart, Line Graph \n")
-    return df
 
 # User prompted to enter dataset
 # User enters dataset url
@@ -77,10 +78,10 @@ data_summarize(df)
 print("From the columns listed previously, choose your fields for your pivot table.")
 print("Please enter it exactly how it is shown under Columns.")
 
-while True:
+def user_generation():
     try:
         user_columns = input("Please enter columns for your pivot table: ")  # Enter Private-Govt
-        user_index = input("Please enter the index for your pivot table: ") # Enter Contact Gender
+        user_index = input("Please enter the rows for your pivot table: ") # Enter Contact Gender
         user_values = input("Please enter values for your pivot table: ")  # Enter Annual Sales with space at end
 
         # Pivot table generated based off of user input (if user inputted correctly)
@@ -104,49 +105,62 @@ while True:
         # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph (letter for letter correct)
         # Just one of the visualization options -- Bar Chart
         data_vis_options = ["Bar Chart", "Histogram", "Pie Chart", "Line Graph"]
-        user_graph_title = input("Please enter the title of your graph: \n")
+        print("Choices for graph: Bar Chart, Histogram, Pie Chart, Line Graph")
         user_graph = input("Please enter the type of graph you would like to generate: \n")
-        vis_entered = False
-        while vis_entered == False:
+        user_graph_title = input("Please enter the title of your graph: \n")
+
+        while True:
             if user_graph == "Bar Chart":
                 def bar_chart(df, x, y, color, title):
                     fig = px.bar(df, x=x, y=y, color=color, title=title)
                     fig.show()
+                    gen_url = py.iplot(fig, filename='bar chart')
+                    print(gen_url)
                 bar_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
-                vis_entered = True
+                break
 
             elif user_graph == "Histogram":
                 def histogram(df, x, title):
                     fig = px.histogram(df, x=x, title=title)
                     fig.show()
                 histogram(df, x=user_columns, title=user_graph_title)
-                vis_entered = True
+                break
 
             elif user_graph == "Pie Chart":
                 def pie_chart(df, values, names, title):
                     fig = px.pie(df, values=values, names=names, title=title)
                     fig.show()
                 pie_chart(df, values=user_values, names=user_columns, title=user_graph_title)
-                vis_entered = True
+                break
 
             elif user_graph == "Line Graph":
                 def line_chart(df, x, y, color, title):
                     fig = px.line(df, x=x, y=y, color = color, title=title)
                     fig.show()
                 line_chart(df, x=user_columns, y=user_values, color=user_index, title=user_graph_title)
-                vis_entered = True
+                break
 
             else:
                 print("Incorrect type of data visualization option. Please try again.")
         # User then generates one of the visualization options -- Bar Chart, Histogram, Pie Chart, Line Graph
-        break
 
     except KeyError as ke:
         print('Key Not Found in Columns under Data Summary:', ke)
         print("Please try to enter chosen field exactly how it appears under Columns.")
 
-#CONTINUE PROGRAM: Does user want to redo graph?
-# Customize title option??
+user_generation()
+while True:
+    redo = input("Do you want to redo pivot table and graph fields?(Y/N)")
+    redo.strip().lower()
+    if redo == "y":
+        user_generation()
+        break
+    elif redo == "n":
+        break
+    else:
+        print("Invalid response, please try again")
+
+# CONTINUE PROGRAM: Does user want to redo graph?
 # Just ends if error, find way to retrace back to input where error occured
 
 # Prompt user for input based on above
