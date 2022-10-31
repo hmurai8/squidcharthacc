@@ -1,3 +1,8 @@
+# import brains.data.url as url
+from brains.data import url
+from brains.viz import matplotlib_viz
+# import brains.viz.viz as viz
+from brains.viz import plotly_viz as pp
 import urllib.error
 
 import pandas as pd

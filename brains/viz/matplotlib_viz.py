@@ -29,7 +29,4 @@ def histogram(data,xlabel=None,ylabel="counts",title=None):
 
     #TODO determine how to actually display something -- maybe we return the plt instead
     plt.show()
-
-
-
-
+    # TODO save as a png or return the fig by returning plt somehow?

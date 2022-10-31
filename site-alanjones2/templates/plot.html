@@ -15,17 +15,30 @@
 </head>
 
 <body style="font-family:arial, sans-serif">
-    <h1>GDP per Capita Over Time</h1>
-    <h2>Choose your country</h2>
-    <p>Make sure you spell it correctly with capital letter(s), e.g. United Kingdom</p>
-    <input type="text" id="fname" name="fname" onchange="cb(this.value)">
+    <h1>SquidBrainsAreShapedLikeDonuts</h1>
+
     <div id="chart" class="chart"></div>
+
+    <p>This is  your data</p>
+
+    <div id="data" class="datatab"></div>
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+    <p>Pick which stuff you like post</p>
+    <form method="post">
+        {% for title in titles %}
+            <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
+        {% endfor %}
+        <input type="submit" name="button" value="plot"> <br/>
+        <input type="submit" name="button" value="reset"> <br/>
+    </form>
 </body>
 
 <script>
     d = {{ graphJSON | safe }};
-    //d.config={staticPlot: true};
     Plotly.newPlot('chart', d, {});
-
 </script>
 </html>
