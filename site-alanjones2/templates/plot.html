@@ -32,6 +32,12 @@
         {% for title in titles %}
             <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
         {% endfor %}
+        <select id="plot_type" name="plot_type">
+            <option value="histogram">histogram</option>
+            <option value="bar">bar</option>
+            <option value="line">line</option>
+            <option value="pie">pie</option>
+        </select>
         <input type="submit" name="button" value="plot"> <br/>
         <input type="submit" name="button" value="reset"> <br/>
     </form>

@@ -49,6 +49,7 @@ def get_features(form):
     print("form:")
     print(form)
     session['selected'] = form.getlist('selected')
+    session['plot_type'] = form.get('plot_type')
     return
 
 
@@ -94,6 +95,15 @@ def plot(): # TODO add plot type and feature selection trhough callbacks
     # try:
     df = df_session_load()
 
-    fig = pp.histogram(df[session['selected']])
+    if session['plot_type'] == "histogram":
+        fig = pp.histogram(df[session['selected']])
+    elif session['plot_type'] == "bar":
+        fig = pp.bar(df[session['selected']])
+    elif session['plot_type'] == "pie":
+        fig = pp.pie(df[session['selected']])
+    elif session['plot_type'] == "line":
+        fig = pp.line(df[session['selected']])
+    else:
+        fig = None
 
     return fig
