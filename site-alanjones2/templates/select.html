@@ -6,7 +6,7 @@
 
 <body style="font-family:arial, sans-serif">
     <h1>SquidBrainsAreShapedLikeDonuts</h1>
-    <p>This is your data</p>
+    <p>This is a summary of your data: </p>
 
     <div id="data" class="datatab"></div>
     {% for table in tables %}
@@ -14,7 +14,7 @@
             {{ table|safe }}
     {% endfor %}
 
-    <p>Pick which stuff you like post</p>
+    <p>Pick which featuresyou want to plot:</p>
     <form method="post">
         {% for title in titles %}
             <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
