@@ -1,6 +1,6 @@
 # Taken from: https://github.com/alanjones2/Flask-Plotly/tree/main/plotlycallback-gm
 
-from flask import Flask, config, render_template, request
+from flask import Flask, config, render_template, request, session
 import pandas as pd
 import json
 import plotly
@@ -29,34 +29,76 @@ from brains.data import url as url
 
 
 app = Flask(__name__)
+# Set the secret key to some random bytes. Keep this really secret!
+app.secret_key = b'SquidBrainsAresShapedLikeDonuts' # this is so we can use "session"
 
 
-class ActiveViz: # object to hold parameters for actuve visualization
-    def __init__(self, path=None, df=pd.DataFrame(), features=[], selected=[]):
-        self.path = path
-        self.df = df
-        self.features = features
-        self.selected= selected
+def df_session_load(): # because we will do this often, just want a fast way to get it back to a df
+    return pd.read_json(session['df'])
+
+
+def update_data(form):
+    """Update the dataframe"""
+
+    session['path'] = form
 
 
 # call back method, refreshes when data is entered
 @app.route('/callback', methods=['POST', 'GET'])
 def cb():
-    return plot(request.args.get('data')) # calls a function to update
+    print(request.args.get('data'))
+    return plot(request.args.get('data'),session['features']) # calls a function to update
 
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
     # return render_template('chartsajax.html', graphJSON=gm())
     path = "../sample_data/example.csv"
-    df = url.path_to_dataframe(path)
-    return render_template('chartsajax.html', graphJSON=plot(), tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+    # session['viz'] = ActiveViz(path)
+
+    session['path'] = path  # location of data
+    df = url.path_to_dataframe(session['path'])
+    session['df'] = df.to_json()
+    # session['features'] = df.columns
+    session['selected'] = ['Age']
+
+    if request.method == 'POST':
+        if request.form['button'] == "data_fetch":
+            print('Fetching data...')
+            pass
+        elif request.form['button'] == "plot":
+            print('plotting data...')
+            return render_template('chartsajax.html', graphJSON=plot(session['path'], session['selected']),
+                                   tables=[df.to_html(classes='data')], titles=df.columns.values)
+            # pass
+        else:
+            print('reset')
+            return render_template('start.html')
+            pass
+        print("request form: ")
+        print(request.form)
+        # print(request.form['plot_button'])
+        print('Button pressed')
+    else:
+        return render_template("start.html")
 
 
-def plot(path="../sample_data/example.csv"): # TODO add plot type and feature selection trhough callbacks
-    # ploit the stuff
 
-    df = url.path_to_dataframe(path)
 
-    fig = pp.histogram(df['Age'])
+    # TODO render a page with a feature selection option and a plot button
+    # print(df.columns.values)
+    return render_template('chartsajax.html', graphJSON=plot(session['path'],session['selected']), tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+
+def plot(path, features): # TODO add plot type and feature selection trhough callbacks
+    # plot the stuff
+    print("Path: " + path)
+    session['path'] = path
+    # try:
+    df = df_session_load()
+    fig = pp.histogram(df[features])
+    # except:
+    #     fig = None
+
     return fig

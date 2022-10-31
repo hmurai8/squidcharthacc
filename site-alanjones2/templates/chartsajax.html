@@ -20,10 +20,20 @@
     <p>Copy and paste the url for the CSV</p>
     <input type="text" id="fname" name="fname" onchange="cb(this.value)">
 
+    <div id="data" class="datatab"></div>
     {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
     {% endfor %}
+
+    {% for title in titles %}
+        <input type=checkbox name=selected value={{title|safe}}> {{title }} <br/>
+    {% endfor %}
+
+    <form method="post">
+        <input type="submit" name="button" value="plot"> <br/>
+        <input type="submit" name="button" value="fetch_data"> <br/>
+    </form>
 
     <form method="post" action="/select">
       <select id="operator" name="operator">
