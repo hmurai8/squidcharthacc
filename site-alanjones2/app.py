@@ -22,6 +22,7 @@ sys.path.append(parent)
 # our libaries
 from brains.viz import plotly_viz as pp
 from brains.data import url as url
+from brains.data import summary as summary
 
 
 app = Flask(__name__)
@@ -57,20 +58,31 @@ def index():
     if request.method == 'POST':
         if request.form['button'] == "fetch_data":
             print('Fetching data...')
+
+            # parse data
             update_data(request.form)
             df = df_session_load()
-            print(session)
-            return render_template('select.html', tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+            # make summary
+            df_summary = summary.df_summary(df)
+
+            # update page
+            return render_template('select.html', tables=[df_summary.to_html(classes='data')], titles=df.columns.values)
         elif request.form['button'] == "plot":
-            print('Plotting')
-            get_features(request.form)
             print('plotting data...')
+
+            # parse data
+            get_features(request.form)
             df = df_session_load()
-            return render_template('plot.html', graphJSON=plot(),tables=[df.to_html(classes='data')], titles=df.columns.values)
-            # pass
+
+            # make summary
+            df_summary = summary.df_summary(df)
+
+            # update page
+            return render_template('plot.html', graphJSON=plot(),tables=[df_summary.to_html(classes='data')], titles=df.columns.values)
         else:
             # TODO add reset button to each page
-            print('reset')
+            print('resetting...')
             return render_template('start.html')
             pass
     else:
